@@ -55,7 +55,7 @@ Requirements on the target PC:
 - Administrator rights
 - [App Installer / winget](https://apps.microsoft.com/detail/9nblggh4nns1) for catalog apps
 
-On Windows you can also start the designer with `engine\Start-Krypton.cmd` (Python) or `engine\Start-Designer.ps1` (UI only).
+On Windows you can also start the designer by double-clicking `engine\Start-Designer.cmd` (no Python). Leave that window open and use http://127.0.0.1:8787/. If a window flashes and closes, run the `.cmd` file — it keeps the error on screen.
 
 ## Profile format
 
