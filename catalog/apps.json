@@ -1,0 +1,877 @@
+{
+  "version": 1,
+  "categories": [
+    { "id": "browsers", "name": "Browsers", "blurb": "Web browsers" },
+    { "id": "utilities", "name": "Utilities", "blurb": "Everyday system tools" },
+    { "id": "productivity", "name": "Productivity", "blurb": "Documents, notes, and office" },
+    { "id": "communication", "name": "Communication", "blurb": "Chat, meetings, and mail" },
+    { "id": "media", "name": "Media", "blurb": "Music, video, and codecs" },
+    { "id": "creative", "name": "Creative", "blurb": "Photo, design, and 3D" },
+    { "id": "developer", "name": "Developer", "blurb": "Editors, runtimes, and Git" },
+    { "id": "gaming", "name": "Gaming", "blurb": "Stores and launchers" },
+    { "id": "security", "name": "Security", "blurb": "Passwords, VPN, and scanning" },
+    { "id": "cloud", "name": "Cloud & transfer", "blurb": "Drives and file sharing" }
+  ],
+  "apps": [
+    {
+      "id": "google-chrome",
+      "name": "Google Chrome",
+      "publisher": "Google",
+      "category": "browsers",
+      "description": "Fast Chromium browser with a huge extension library.",
+      "source": "winget",
+      "package": "Google.Chrome",
+      "website": "https://www.google.com/chrome/"
+    },
+    {
+      "id": "firefox",
+      "name": "Mozilla Firefox",
+      "publisher": "Mozilla",
+      "category": "browsers",
+      "description": "Independent browser with strong privacy controls.",
+      "source": "winget",
+      "package": "Mozilla.Firefox",
+      "website": "https://www.mozilla.org/firefox/"
+    },
+    {
+      "id": "brave",
+      "name": "Brave",
+      "publisher": "Brave Software",
+      "category": "browsers",
+      "description": "Chromium browser with built-in tracker blocking.",
+      "source": "winget",
+      "package": "Brave.Brave",
+      "website": "https://brave.com/"
+    },
+    {
+      "id": "opera",
+      "name": "Opera",
+      "publisher": "Opera",
+      "category": "browsers",
+      "description": "Browser with a sidebar, workspaces, and a free VPN feature.",
+      "source": "winget",
+      "package": "Opera.Opera",
+      "website": "https://www.opera.com/"
+    },
+    {
+      "id": "vivaldi",
+      "name": "Vivaldi",
+      "publisher": "Vivaldi Technologies",
+      "category": "browsers",
+      "description": "Highly customizable Chromium browser for power users.",
+      "source": "winget",
+      "package": "Vivaldi.Vivaldi",
+      "website": "https://vivaldi.com/"
+    },
+    {
+      "id": "7zip",
+      "name": "7-Zip",
+      "publisher": "Igor Pavlov",
+      "category": "utilities",
+      "description": "Free archive tool for 7z, zip, rar, and many other formats.",
+      "source": "winget",
+      "package": "7zip.7zip",
+      "website": "https://www.7-zip.org/"
+    },
+    {
+      "id": "nanazip",
+      "name": "NanaZip",
+      "publisher": "M2-Team",
+      "category": "utilities",
+      "description": "Modern 7-Zip fork with Windows 11 context menu support.",
+      "source": "winget",
+      "package": "M2Team.NanaZip",
+      "website": "https://github.com/M2Team/NanaZip"
+    },
+    {
+      "id": "everything",
+      "name": "Everything",
+      "publisher": "voidtools",
+      "category": "utilities",
+      "description": "Instant filename search across the whole disk.",
+      "source": "winget",
+      "package": "voidtools.Everything",
+      "website": "https://www.voidtools.com/"
+    },
+    {
+      "id": "microsoft-powertoys",
+      "name": "PowerToys",
+      "publisher": "Microsoft",
+      "category": "utilities",
+      "description": "FancyZones, clipboard history, Awake, and other Win11 extras.",
+      "source": "winget",
+      "package": "Microsoft.PowerToys",
+      "website": "https://learn.microsoft.com/windows/powertoys/"
+    },
+    {
+      "id": "notepad-plus-plus",
+      "name": "Notepad++",
+      "publisher": "Don Ho",
+      "category": "utilities",
+      "description": "Lightweight code and text editor with tabs and plugins.",
+      "source": "winget",
+      "package": "Notepad++.Notepad++",
+      "website": "https://notepad-plus-plus.org/"
+    },
+    {
+      "id": "sharex",
+      "name": "ShareX",
+      "publisher": "ShareX Team",
+      "category": "utilities",
+      "description": "Screenshot, screen recording, and file sharing toolkit.",
+      "source": "winget",
+      "package": "ShareX.ShareX",
+      "website": "https://getsharex.com/"
+    },
+    {
+      "id": "wiztree",
+      "name": "WizTree",
+      "publisher": "Antibody Software",
+      "category": "utilities",
+      "description": "Finds what is eating disk space using the NTFS MFT.",
+      "source": "winget",
+      "package": "AntibodySoftware.WizTree",
+      "website": "https://www.diskanalyzer.com/"
+    },
+    {
+      "id": "quicklook",
+      "name": "QuickLook",
+      "publisher": "QL-Win",
+      "category": "utilities",
+      "description": "Press spacebar in Explorer to preview files like on macOS.",
+      "source": "winget",
+      "package": "QL-Win.QuickLook",
+      "website": "https://github.com/QL-Win/QuickLook"
+    },
+    {
+      "id": "cpu-z",
+      "name": "CPU-Z",
+      "publisher": "CPUID",
+      "category": "utilities",
+      "description": "Reports CPU, motherboard, memory, and graphics details.",
+      "source": "winget",
+      "package": "CPUID.CPU-Z",
+      "website": "https://www.cpuid.com/softwares/cpu-z.html"
+    },
+    {
+      "id": "hwinfo",
+      "name": "HWiNFO",
+      "publisher": "REALiX",
+      "category": "utilities",
+      "description": "Deep hardware inventory and real-time sensors.",
+      "source": "winget",
+      "package": "REALiX.HWiNFO",
+      "website": "https://www.hwinfo.com/"
+    },
+    {
+      "id": "crystaldiskinfo",
+      "name": "CrystalDiskInfo",
+      "publisher": "Crystal Dew World",
+      "category": "utilities",
+      "description": "S.M.A.R.T. drive health and temperature monitor.",
+      "source": "winget",
+      "package": "CrystalDewWorld.CrystalDiskInfo",
+      "website": "https://crystalmark.info/"
+    },
+    {
+      "id": "crystaldiskmark",
+      "name": "CrystalDiskMark",
+      "publisher": "Crystal Dew World",
+      "category": "utilities",
+      "description": "Simple disk read/write benchmark.",
+      "source": "winget",
+      "package": "CrystalDewWorld.CrystalDiskMark",
+      "website": "https://crystalmark.info/"
+    },
+    {
+      "id": "process-explorer",
+      "name": "Process Explorer",
+      "publisher": "Microsoft Sysinternals",
+      "category": "utilities",
+      "description": "Advanced Task Manager replacement from Sysinternals.",
+      "source": "winget",
+      "package": "Microsoft.Sysinternals.ProcessExplorer",
+      "website": "https://learn.microsoft.com/sysinternals/downloads/process-explorer"
+    },
+    {
+      "id": "revo-uninstaller",
+      "name": "Revo Uninstaller",
+      "publisher": "VS Revo Group",
+      "category": "utilities",
+      "description": "Removes leftover files and registry keys after uninstalls.",
+      "source": "winget",
+      "package": "RevoUninstaller.RevoUninstaller",
+      "website": "https://www.revouninstaller.com/"
+    },
+    {
+      "id": "rufus",
+      "name": "Rufus",
+      "publisher": "Pete Batard",
+      "category": "utilities",
+      "description": "Creates bootable USB installers from ISO images.",
+      "source": "winget",
+      "package": "Rufus.Rufus",
+      "website": "https://rufus.ie/"
+    },
+    {
+      "id": "flow-launcher",
+      "name": "Flow Launcher",
+      "publisher": "Flow-Launcher",
+      "category": "utilities",
+      "description": "Keyboard launcher for apps, files, and plugins.",
+      "source": "winget",
+      "package": "Flow-Launcher.Flow-Launcher",
+      "website": "https://www.flowlauncher.com/"
+    },
+    {
+      "id": "autohotkey",
+      "name": "AutoHotkey",
+      "publisher": "AutoHotkey Foundation",
+      "category": "utilities",
+      "description": "Script keyboard shortcuts and window automation.",
+      "source": "winget",
+      "package": "AutoHotkey.AutoHotkey",
+      "website": "https://www.autohotkey.com/"
+    },
+    {
+      "id": "winmerge",
+      "name": "WinMerge",
+      "publisher": "WinMerge",
+      "category": "utilities",
+      "description": "Visual diff and merge for files and folders.",
+      "source": "winget",
+      "package": "WinMerge.WinMerge",
+      "website": "https://winmerge.org/"
+    },
+    {
+      "id": "vcredist",
+      "name": "Visual C++ Redistributable",
+      "publisher": "Microsoft",
+      "category": "utilities",
+      "description": "2015–2022 x64 runtime required by many Windows apps.",
+      "source": "winget",
+      "package": "Microsoft.VCRedist.2015+.x64",
+      "website": "https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist"
+    },
+    {
+      "id": "libreoffice",
+      "name": "LibreOffice",
+      "publisher": "The Document Foundation",
+      "category": "productivity",
+      "description": "Free Writer, Calc, Impress, and Draw office suite.",
+      "source": "winget",
+      "package": "TheDocumentFoundation.LibreOffice",
+      "website": "https://www.libreoffice.org/"
+    },
+    {
+      "id": "onlyoffice",
+      "name": "ONLYOFFICE Desktop",
+      "publisher": "Ascensio System",
+      "category": "productivity",
+      "description": "Office editors with strong Microsoft format compatibility.",
+      "source": "winget",
+      "package": "ONLYOFFICE.DesktopEditors",
+      "website": "https://www.onlyoffice.com/"
+    },
+    {
+      "id": "adobe-acrobat-reader",
+      "name": "Adobe Acrobat Reader",
+      "publisher": "Adobe",
+      "category": "productivity",
+      "description": "Standard PDF viewer from Adobe.",
+      "source": "winget",
+      "package": "Adobe.Acrobat.Reader.64-bit",
+      "website": "https://www.adobe.com/acrobat/pdf-reader.html"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "publisher": "Notion Labs",
+      "category": "productivity",
+      "description": "Notes, wikis, and lightweight project databases.",
+      "source": "winget",
+      "package": "Notion.Notion",
+      "website": "https://www.notion.so/"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "publisher": "Dynalist",
+      "category": "productivity",
+      "description": "Local Markdown knowledge base with backlinks.",
+      "source": "winget",
+      "package": "Obsidian.Obsidian",
+      "website": "https://obsidian.md/"
+    },
+    {
+      "id": "pdf24",
+      "name": "PDF24 Creator",
+      "publisher": "geek software",
+      "category": "productivity",
+      "description": "Create, merge, compress, and print PDFs.",
+      "source": "winget",
+      "package": "geeksoftwareGmbH.PDF24Creator",
+      "website": "https://tools.pdf24.org/"
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "publisher": "Discord",
+      "category": "communication",
+      "description": "Voice, video, and text chat for communities and games.",
+      "source": "winget",
+      "package": "Discord.Discord",
+      "website": "https://discord.com/"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "publisher": "Zoom",
+      "category": "communication",
+      "description": "Video meetings and webinars.",
+      "source": "winget",
+      "package": "Zoom.Zoom",
+      "website": "https://zoom.us/"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "publisher": "Salesforce",
+      "category": "communication",
+      "description": "Team chat, huddles, and workplace channels.",
+      "source": "winget",
+      "package": "SlackTechnologies.Slack",
+      "website": "https://slack.com/"
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "publisher": "Telegram FZ-LLC",
+      "category": "communication",
+      "description": "Fast cloud messenger with large group chats.",
+      "source": "winget",
+      "package": "Telegram.TelegramDesktop",
+      "website": "https://desktop.telegram.org/"
+    },
+    {
+      "id": "signal",
+      "name": "Signal",
+      "publisher": "Signal Foundation",
+      "category": "communication",
+      "description": "Encrypted messenger for personal chats.",
+      "source": "winget",
+      "package": "OpenWhisperSystems.Signal",
+      "website": "https://signal.org/"
+    },
+    {
+      "id": "whatsapp",
+      "name": "WhatsApp",
+      "publisher": "Meta",
+      "category": "communication",
+      "description": "Desktop client for WhatsApp messaging.",
+      "source": "winget",
+      "package": "WhatsApp.WhatsApp",
+      "website": "https://www.whatsapp.com/download"
+    },
+    {
+      "id": "microsoft-teams",
+      "name": "Microsoft Teams",
+      "publisher": "Microsoft",
+      "category": "communication",
+      "description": "Work chat, meetings, and Microsoft 365 collaboration.",
+      "source": "winget",
+      "package": "Microsoft.Teams",
+      "website": "https://www.microsoft.com/microsoft-teams/"
+    },
+    {
+      "id": "thunderbird",
+      "name": "Thunderbird",
+      "publisher": "Mozilla",
+      "category": "communication",
+      "description": "Open-source desktop email, calendar, and contacts.",
+      "source": "winget",
+      "package": "Mozilla.Thunderbird",
+      "website": "https://www.thunderbird.net/"
+    },
+    {
+      "id": "vlc",
+      "name": "VLC media player",
+      "publisher": "VideoLAN",
+      "category": "media",
+      "description": "Plays almost any audio or video format.",
+      "source": "winget",
+      "package": "VideoLAN.VLC",
+      "website": "https://www.videolan.org/vlc/"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "publisher": "Spotify",
+      "category": "media",
+      "description": "Music and podcast streaming client.",
+      "source": "winget",
+      "package": "Spotify.Spotify",
+      "website": "https://www.spotify.com/"
+    },
+    {
+      "id": "obs-studio",
+      "name": "OBS Studio",
+      "publisher": "OBS Project",
+      "category": "media",
+      "description": "Free live streaming and screen recording.",
+      "source": "winget",
+      "package": "OBSProject.OBSStudio",
+      "website": "https://obsproject.com/"
+    },
+    {
+      "id": "audacity",
+      "name": "Audacity",
+      "publisher": "Muse Group",
+      "category": "media",
+      "description": "Multi-track audio recorder and editor.",
+      "source": "winget",
+      "package": "Audacity.Audacity",
+      "website": "https://www.audacityteam.org/"
+    },
+    {
+      "id": "handbrake",
+      "name": "HandBrake",
+      "publisher": "HandBrake Team",
+      "category": "media",
+      "description": "Converts video files to widely compatible formats.",
+      "source": "winget",
+      "package": "HandBrake.HandBrake",
+      "website": "https://handbrake.fr/"
+    },
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "publisher": "Gyan.dev",
+      "category": "media",
+      "description": "Command-line toolkit for audio and video conversion.",
+      "source": "winget",
+      "package": "Gyan.FFmpeg",
+      "website": "https://ffmpeg.org/"
+    },
+    {
+      "id": "irfanview",
+      "name": "IrfanView",
+      "publisher": "Irfan Skiljan",
+      "category": "media",
+      "description": "Fast image viewer with batch conversion.",
+      "source": "winget",
+      "package": "IrfanSkiljan.IrfanView",
+      "website": "https://www.irfanview.com/"
+    },
+    {
+      "id": "klite",
+      "name": "K-Lite Codec Pack",
+      "publisher": "Codec Guide",
+      "category": "media",
+      "description": "Codecs plus Media Player Classic for extra file types.",
+      "source": "winget",
+      "package": "CodecGuide.K-LiteCodecPack.Standard",
+      "website": "https://www.codecguide.com/"
+    },
+    {
+      "id": "gimp",
+      "name": "GIMP",
+      "publisher": "GIMP Team",
+      "category": "creative",
+      "description": "Free raster image editor for photo work and graphics.",
+      "source": "winget",
+      "package": "GIMP.GIMP",
+      "website": "https://www.gimp.org/"
+    },
+    {
+      "id": "inkscape",
+      "name": "Inkscape",
+      "publisher": "Inkscape",
+      "category": "creative",
+      "description": "Vector drawing program using SVG.",
+      "source": "winget",
+      "package": "Inkscape.Inkscape",
+      "website": "https://inkscape.org/"
+    },
+    {
+      "id": "krita",
+      "name": "Krita",
+      "publisher": "KDE",
+      "category": "creative",
+      "description": "Painting and illustration studio with brush engines.",
+      "source": "winget",
+      "package": "KDE.Krita",
+      "website": "https://krita.org/"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "publisher": "Blender Foundation",
+      "category": "creative",
+      "description": "3D modeling, animation, sculpting, and rendering.",
+      "source": "winget",
+      "package": "BlenderFoundation.Blender",
+      "website": "https://www.blender.org/"
+    },
+    {
+      "id": "shotcut",
+      "name": "Shotcut",
+      "publisher": "Meltytech",
+      "category": "creative",
+      "description": "Open-source timeline video editor.",
+      "source": "winget",
+      "package": "Meltytech.Shotcut",
+      "website": "https://shotcut.org/"
+    },
+    {
+      "id": "visual-studio-code",
+      "name": "Visual Studio Code",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "description": "Extensible code editor used across most stacks.",
+      "source": "winget",
+      "package": "Microsoft.VisualStudioCode",
+      "website": "https://code.visualstudio.com/"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "publisher": "Git SCM",
+      "category": "developer",
+      "description": "Distributed version control. Includes Git Bash.",
+      "source": "winget",
+      "package": "Git.Git",
+      "website": "https://git-scm.com/"
+    },
+    {
+      "id": "github-desktop",
+      "name": "GitHub Desktop",
+      "publisher": "GitHub",
+      "category": "developer",
+      "description": "Graphical Git client focused on GitHub workflows.",
+      "source": "winget",
+      "package": "GitHub.GitHubDesktop",
+      "website": "https://desktop.github.com/"
+    },
+    {
+      "id": "github-cli",
+      "name": "GitHub CLI",
+      "publisher": "GitHub",
+      "category": "developer",
+      "description": "Command-line GitHub for PRs, issues, and repos.",
+      "source": "winget",
+      "package": "GitHub.cli",
+      "website": "https://cli.github.com/"
+    },
+    {
+      "id": "windows-terminal",
+      "name": "Windows Terminal",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "description": "Tabbed terminal for PowerShell, CMD, and WSL.",
+      "source": "winget",
+      "package": "Microsoft.WindowsTerminal",
+      "website": "https://aka.ms/terminal"
+    },
+    {
+      "id": "powershell-7",
+      "name": "PowerShell 7",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "description": "Modern cross-platform PowerShell (pwsh).",
+      "source": "winget",
+      "package": "Microsoft.PowerShell",
+      "website": "https://github.com/PowerShell/PowerShell"
+    },
+    {
+      "id": "nodejs-lts",
+      "name": "Node.js LTS",
+      "publisher": "OpenJS Foundation",
+      "category": "developer",
+      "description": "JavaScript runtime with npm, long-term support build.",
+      "source": "winget",
+      "package": "OpenJS.NodeJS.LTS",
+      "website": "https://nodejs.org/"
+    },
+    {
+      "id": "python-3-12",
+      "name": "Python 3.12",
+      "publisher": "Python Software Foundation",
+      "category": "developer",
+      "description": "Python runtime and pip. Adds python.exe to PATH.",
+      "source": "winget",
+      "package": "Python.Python.3.12",
+      "website": "https://www.python.org/"
+    },
+    {
+      "id": "openjdk-21",
+      "name": "Microsoft OpenJDK 21",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "description": "Long-term support Java Development Kit.",
+      "source": "winget",
+      "package": "Microsoft.OpenJDK.21",
+      "website": "https://learn.microsoft.com/java/openjdk/"
+    },
+    {
+      "id": "docker-desktop",
+      "name": "Docker Desktop",
+      "publisher": "Docker",
+      "category": "developer",
+      "description": "Containers and Kubernetes for Windows. Needs WSL 2 or Hyper-V.",
+      "source": "winget",
+      "package": "Docker.DockerDesktop",
+      "website": "https://www.docker.com/products/docker-desktop/"
+    },
+    {
+      "id": "jetbrains-toolbox",
+      "name": "JetBrains Toolbox",
+      "publisher": "JetBrains",
+      "category": "developer",
+      "description": "Installs and updates IntelliJ, Rider, Android Studio, and more.",
+      "source": "winget",
+      "package": "JetBrains.Toolbox",
+      "website": "https://www.jetbrains.com/toolbox-app/"
+    },
+    {
+      "id": "postman",
+      "name": "Postman",
+      "publisher": "Postman",
+      "category": "developer",
+      "description": "API client for REST, GraphQL, and collections.",
+      "source": "winget",
+      "package": "Postman.Postman",
+      "website": "https://www.postman.com/"
+    },
+    {
+      "id": "dbeaver",
+      "name": "DBeaver Community",
+      "publisher": "DBeaver",
+      "category": "developer",
+      "description": "Universal database GUI for SQL and more.",
+      "source": "winget",
+      "package": "DBeaver.DBeaver.Community",
+      "website": "https://dbeaver.io/"
+    },
+    {
+      "id": "vs-2022-community",
+      "name": "Visual Studio 2022 Community",
+      "publisher": "Microsoft",
+      "category": "developer",
+      "description": "Full IDE for .NET, C++, and Windows development. Large download.",
+      "source": "winget",
+      "package": "Microsoft.VisualStudio.2022.Community",
+      "website": "https://visualstudio.microsoft.com/"
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "publisher": "Google",
+      "category": "developer",
+      "description": "Go programming language toolchain.",
+      "source": "winget",
+      "package": "GoLang.Go",
+      "website": "https://go.dev/"
+    },
+    {
+      "id": "rust",
+      "name": "Rust (MSVC)",
+      "publisher": "Rust Project",
+      "category": "developer",
+      "description": "Rust toolchain using the MSVC linker on Windows.",
+      "source": "winget",
+      "package": "Rustlang.Rust.MSVC",
+      "website": "https://www.rust-lang.org/"
+    },
+    {
+      "id": "neovim",
+      "name": "Neovim",
+      "publisher": "Neovim",
+      "category": "developer",
+      "description": "Modern Vim-based modal editor.",
+      "source": "winget",
+      "package": "Neovim.Neovim",
+      "website": "https://neovim.io/"
+    },
+    {
+      "id": "putty",
+      "name": "PuTTY",
+      "publisher": "Simon Tatham",
+      "category": "developer",
+      "description": "SSH, Telnet, and serial terminal.",
+      "source": "winget",
+      "package": "PuTTY.PuTTY",
+      "website": "https://www.putty.org/"
+    },
+    {
+      "id": "winscp",
+      "name": "WinSCP",
+      "publisher": "Martin Přikryl",
+      "category": "developer",
+      "description": "SFTP, SCP, and FTP client with a two-pane UI.",
+      "source": "winget",
+      "package": "WinSCP.WinSCP",
+      "website": "https://winscp.net/"
+    },
+    {
+      "id": "wireshark",
+      "name": "Wireshark",
+      "publisher": "Wireshark Foundation",
+      "category": "developer",
+      "description": "Packet capture and protocol analysis.",
+      "source": "winget",
+      "package": "WiresharkFoundation.Wireshark",
+      "website": "https://www.wireshark.org/"
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "publisher": "Valve",
+      "category": "gaming",
+      "description": "PC game store and overlay.",
+      "source": "winget",
+      "package": "Valve.Steam",
+      "website": "https://store.steampowered.com/"
+    },
+    {
+      "id": "epic-games",
+      "name": "Epic Games Launcher",
+      "publisher": "Epic Games",
+      "category": "gaming",
+      "description": "Epic Games Store and Unreal-related titles.",
+      "source": "winget",
+      "package": "EpicGames.EpicGamesLauncher",
+      "website": "https://store.epicgames.com/"
+    },
+    {
+      "id": "ubisoft-connect",
+      "name": "Ubisoft Connect",
+      "publisher": "Ubisoft",
+      "category": "gaming",
+      "description": "Ubisoft game launcher and overlay.",
+      "source": "winget",
+      "package": "Ubisoft.Connect",
+      "website": "https://ubisoftconnect.com/"
+    },
+    {
+      "id": "gog-galaxy",
+      "name": "GOG Galaxy",
+      "publisher": "GOG",
+      "category": "gaming",
+      "description": "DRM-free GOG library plus other store connections.",
+      "source": "winget",
+      "package": "GOG.Galaxy",
+      "website": "https://www.gog.com/galaxy"
+    },
+    {
+      "id": "prism-launcher",
+      "name": "Prism Launcher",
+      "publisher": "Prism Launcher",
+      "category": "gaming",
+      "description": "Open-source Minecraft launcher with instances and mods.",
+      "source": "winget",
+      "package": "PrismLauncher.PrismLauncher",
+      "website": "https://prismlauncher.org/"
+    },
+    {
+      "id": "bitwarden",
+      "name": "Bitwarden",
+      "publisher": "Bitwarden",
+      "category": "security",
+      "description": "Open-source password manager with a desktop vault.",
+      "source": "winget",
+      "package": "Bitwarden.Bitwarden",
+      "website": "https://bitwarden.com/"
+    },
+    {
+      "id": "keepassxc",
+      "name": "KeePassXC",
+      "publisher": "KeePassXC Team",
+      "category": "security",
+      "description": "Offline password database you keep as a local file.",
+      "source": "winget",
+      "package": "KeePassXCTeam.KeePassXC",
+      "website": "https://keepassxc.org/"
+    },
+    {
+      "id": "malwarebytes",
+      "name": "Malwarebytes",
+      "publisher": "Malwarebytes",
+      "category": "security",
+      "description": "On-demand malware scanner that sits beside Windows Security.",
+      "source": "winget",
+      "package": "Malwarebytes.Malwarebytes",
+      "website": "https://www.malwarebytes.com/"
+    },
+    {
+      "id": "proton-vpn",
+      "name": "Proton VPN",
+      "publisher": "Proton",
+      "category": "security",
+      "description": "VPN client with a free tier and paid servers.",
+      "source": "winget",
+      "package": "Proton.ProtonVPN",
+      "website": "https://protonvpn.com/"
+    },
+    {
+      "id": "tailscale",
+      "name": "Tailscale",
+      "publisher": "Tailscale",
+      "category": "security",
+      "description": "WireGuard mesh VPN for your own devices.",
+      "source": "winget",
+      "package": "Tailscale.Tailscale",
+      "website": "https://tailscale.com/"
+    },
+    {
+      "id": "google-drive",
+      "name": "Google Drive",
+      "publisher": "Google",
+      "category": "cloud",
+      "description": "Mirrors Google Drive folders on this PC.",
+      "source": "winget",
+      "package": "Google.GoogleDrive",
+      "website": "https://www.google.com/drive/download/"
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "publisher": "Dropbox",
+      "category": "cloud",
+      "description": "Cloud file sync client.",
+      "source": "winget",
+      "package": "Dropbox.Dropbox",
+      "website": "https://www.dropbox.com/"
+    },
+    {
+      "id": "nextcloud",
+      "name": "Nextcloud Desktop",
+      "publisher": "Nextcloud",
+      "category": "cloud",
+      "description": "Sync client for a self-hosted Nextcloud server.",
+      "source": "winget",
+      "package": "Nextcloud.NextcloudDesktop",
+      "website": "https://nextcloud.com/"
+    },
+    {
+      "id": "localsend",
+      "name": "LocalSend",
+      "publisher": "Tien Do Nam",
+      "category": "cloud",
+      "description": "Send files across devices on the same network without an account.",
+      "source": "winget",
+      "package": "LocalSend.LocalSend",
+      "website": "https://localsend.org/"
+    },
+    {
+      "id": "qbittorrent",
+      "name": "qBittorrent",
+      "publisher": "The qBittorrent Project",
+      "category": "cloud",
+      "description": "Open-source BitTorrent client with a built-in search UI.",
+      "source": "winget",
+      "package": "qBittorrent.qBittorrent",
+      "website": "https://www.qbittorrent.org/"
+    }
+  ]
+}

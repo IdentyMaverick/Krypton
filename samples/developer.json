@@ -1,0 +1,36 @@
+{
+  "name": "Developer workstation",
+  "version": 1,
+  "apps": [
+    "google-chrome",
+    "7zip",
+    "microsoft-powertoys",
+    "visual-studio-code",
+    "git",
+    "github-desktop",
+    "github-cli",
+    "windows-terminal",
+    "powershell-7",
+    "nodejs-lts",
+    "python-3-12",
+    "openjdk-21",
+    "postman",
+    "notepad-plus-plus",
+    "vcredist",
+    {
+      "id": "custom-ripgrep",
+      "name": "ripgrep",
+      "source": "winget",
+      "package": "BurntSushi.ripgrep.MSVC"
+    }
+  ],
+  "tweaks": [
+    "show-file-extensions",
+    "show-hidden-files",
+    "dark-mode",
+    "explorer-this-pc",
+    "enable-long-paths",
+    "classic-context-menu",
+    "end-task-in-taskbar"
+  ]
+}

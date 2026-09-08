@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="krypton-facet" x1="12" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CFFC4"/>
+      <stop offset="0.55" stop-color="#3DDC97"/>
+      <stop offset="1" stop-color="#148F68"/>
+    </linearGradient>
+    <linearGradient id="krypton-sheen" x1="20" y1="8" x2="28" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 L56 18 V46 L32 60 L8 46 V18 Z" fill="url(#krypton-facet)"/>
+  <path d="M32 4 L56 18 L32 30 L8 18 Z" fill="#9EFFD8" fill-opacity="0.35"/>
+  <path d="M32 30 L56 18 V46 L32 60 Z" fill="#0B3D2E" fill-opacity="0.22"/>
+  <path d="M22 20 V44 H28.5 L40.5 28.5 V44 H46 V20 H39.5 L27.5 35.5 V20 Z" fill="#06231A"/>
+  <path d="M32 4 L20 11 L32 30 L44 11 Z" fill="url(#krypton-sheen)"/>
+</svg>

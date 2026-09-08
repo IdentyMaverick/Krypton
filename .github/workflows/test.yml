@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches: [main, "cursor/**"]
+  pull_request:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate catalog and export engine
+        run: python -m unittest discover -s tests -v
+      - name: CLI validate
+        run: python -m krypton validate

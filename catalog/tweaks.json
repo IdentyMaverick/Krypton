@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "tweaks": [
+    {
+      "id": "show-file-extensions",
+      "name": "Show file extensions",
+      "description": "Always show .exe, .pdf, and other suffixes in File Explorer.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "show-hidden-files",
+      "name": "Show hidden files",
+      "description": "Reveal hidden files and folders in File Explorer.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "dark-mode",
+      "name": "Windows dark mode",
+      "description": "Switch apps and system chrome to dark appearance.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "explorer-this-pc",
+      "name": "Open Explorer to This PC",
+      "description": "Start File Explorer on This PC instead of Home.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "taskbar-left",
+      "name": "Align taskbar to the left",
+      "description": "Move the Windows 11 taskbar icons to the left edge.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "disable-widgets",
+      "name": "Hide Widgets button",
+      "description": "Remove the Widgets icon from the taskbar.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "end-task-in-taskbar",
+      "name": "End task from the taskbar",
+      "description": "Right-click a running app on the taskbar to end its task.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "classic-context-menu",
+      "name": "Classic right-click menu",
+      "description": "Restore the full Windows 10-style Explorer context menu.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "disable-bing-search",
+      "name": "Disable Bing in Start search",
+      "description": "Keep Start search on local apps and files instead of web results.",
+      "risk": "safe",
+      "scope": "current-user"
+    },
+    {
+      "id": "enable-long-paths",
+      "name": "Enable long file paths",
+      "description": "Allow paths longer than 260 characters. Needs administrator rights.",
+      "risk": "moderate",
+      "scope": "machine"
+    },
+    {
+      "id": "high-performance-power",
+      "name": "High performance power plan",
+      "description": "Prefer the High performance scheme. On laptops this uses more battery.",
+      "risk": "moderate",
+      "scope": "machine"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "presets": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "description": "A clean Windows 11 starter set: browser, archives, media, notes, and PowerToys.",
+      "apps": [
+        "google-chrome",
+        "7zip",
+        "vlc",
+        "microsoft-powertoys",
+        "notepad-plus-plus",
+        "libreoffice",
+        "vcredist"
+      ],
+      "tweaks": [
+        "show-file-extensions",
+        "show-hidden-files",
+        "dark-mode",
+        "explorer-this-pc"
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Office & home",
+      "description": "Documents, PDF, chat, cloud drive, and everyday utilities.",
+      "apps": [
+        "google-chrome",
+        "7zip",
+        "libreoffice",
+        "adobe-acrobat-reader",
+        "vlc",
+        "spotify",
+        "zoom",
+        "telegram",
+        "google-drive",
+        "notepad-plus-plus"
+      ],
+      "tweaks": [
+        "show-file-extensions",
+        "dark-mode",
+        "explorer-this-pc"
+      ]
+    },
+    {
+      "id": "developer",
+      "name": "Developer",
+      "description": "Editors, runtimes, Git, terminals, and API tools for software work.",
+      "apps": [
+        "google-chrome",
+        "7zip",
+        "microsoft-powertoys",
+        "visual-studio-code",
+        "git",
+        "github-desktop",
+        "github-cli",
+        "windows-terminal",
+        "powershell-7",
+        "nodejs-lts",
+        "python-3-12",
+        "openjdk-21",
+        "postman",
+        "notepad-plus-plus",
+        "vcredist"
+      ],
+      "tweaks": [
+        "show-file-extensions",
+        "show-hidden-files",
+        "dark-mode",
+        "explorer-this-pc",
+        "enable-long-paths",
+        "classic-context-menu",
+        "end-task-in-taskbar"
+      ]
+    },
+    {
+      "id": "creator",
+      "name": "Creator",
+      "description": "Recording, photo, video, and 3D tools for making things.",
+      "apps": [
+        "google-chrome",
+        "7zip",
+        "vlc",
+        "obs-studio",
+        "audacity",
+        "handbrake",
+        "gimp",
+        "inkscape",
+        "krita",
+        "blender",
+        "shotcut",
+        "ffmpeg"
+      ],
+      "tweaks": [
+        "show-file-extensions",
+        "dark-mode",
+        "high-performance-power"
+      ]
+    },
+    {
+      "id": "gamer",
+      "name": "Gamer",
+      "description": "Stores, voice chat, and overlay-friendly extras.",
+      "apps": [
+        "google-chrome",
+        "7zip",
+        "steam",
+        "epic-games",
+        "discord",
+        "obs-studio",
+        "spotify",
+        "cpu-z",
+        "hwinfo"
+      ],
+      "tweaks": [
+        "dark-mode",
+        "high-performance-power",
+        "disable-widgets"
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Privacy & security",
+      "description": "Password managers, VPN, and a second-opinion malware scanner.",
+      "apps": [
+        "bitwarden",
+        "keepassxc",
+        "proton-vpn",
+        "malwarebytes",
+        "signal",
+        "localsend"
+      ],
+      "tweaks": [
+        "show-file-extensions",
+        "show-hidden-files"
+      ]
+    }
+  ]
+}

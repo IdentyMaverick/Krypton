@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Krypton — Windows 11 setup designer</title>
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-mark" src="/assets/logo.svg" alt="" />
+        <div>
+          <p class="brand-name">Krypton</p>
+          <p class="brand-tag">Windows 11 all-in-one setup</p>
+        </div>
+      </div>
+      <label class="search">
+        <span class="vh">Search apps</span>
+        <input id="search" type="search" placeholder="Search apps, publishers, or winget ids" autocomplete="off" />
+      </label>
+      <label class="bundle-name">
+        <span>Setup name</span>
+        <input id="bundle-name" type="text" maxlength="80" />
+      </label>
+    </header>
+
+    <aside class="nav">
+      <nav>
+        <button class="nav-btn is-active" data-view="apps">Apps</button>
+        <button class="nav-btn" data-view="tweaks">Windows options</button>
+        <button class="nav-btn" data-view="review">Review &amp; export</button>
+      </nav>
+      <div class="nav-block">
+        <p class="nav-label">Presets</p>
+        <div id="preset-list" class="preset-list"></div>
+      </div>
+      <div class="nav-block nav-help">
+        <p>Select catalog apps or add your own. Export writes a setup folder you can copy to a new Windows 11 PC.</p>
+      </div>
+    </aside>
+
+    <main class="main" id="main"></main>
+
+    <aside class="cart" aria-label="Selected setup">
+      <div class="cart-head">
+        <h2>Your setup</h2>
+        <p id="cart-count">0 apps · 0 options</p>
+      </div>
+      <ol id="cart-list" class="cart-list"></ol>
+      <div class="cart-actions">
+        <button id="btn-add-custom" class="btn btn-ghost" type="button">Add custom app</button>
+        <button id="btn-export" class="btn btn-primary" type="button">Export setup program</button>
+        <button id="btn-save-profile" class="btn btn-ghost" type="button">Save profile JSON</button>
+        <button id="btn-import-profile" class="btn btn-ghost" type="button">Import profile</button>
+        <input id="import-file" class="vh" type="file" accept="application/json,.json" />
+      </div>
+      <p id="status-line" class="status-line"></p>
+    </aside>
+  </div>
+
+  <dialog id="custom-dialog">
+    <form id="custom-form" method="dialog">
+      <h2>Add an app</h2>
+      <p class="dialog-lead">Anything not in the catalog can still go into the setup program.</p>
+      <label>Name
+        <input id="custom-name" name="name" required maxlength="80" placeholder="My installer" />
+      </label>
+      <label>Source
+        <select id="custom-source" name="source">
+          <option value="winget">Winget package id</option>
+          <option value="url">HTTPS installer URL</option>
+          <option value="local">File inside the setup folder</option>
+        </select>
+      </label>
+      <label id="custom-package-wrap">Winget id
+        <input id="custom-package" name="package" placeholder="Vendor.Package" />
+      </label>
+      <label id="custom-url-wrap" hidden>Installer URL
+        <input id="custom-url" name="url" placeholder="https://example.com/setup.exe" />
+      </label>
+      <label id="custom-path-wrap" hidden>Relative path
+        <input id="custom-path" name="path" placeholder="installers\\app.exe" />
+      </label>
+      <label id="custom-args-wrap" hidden>Silent arguments
+        <input id="custom-args" name="silentArgs" placeholder="/S" />
+      </label>
+      <p id="custom-error" class="form-error" hidden></p>
+      <div class="dialog-actions">
+        <button value="cancel" class="btn btn-ghost" type="submit">Cancel</button>
+        <button id="custom-save" class="btn btn-primary" type="button">Add to setup</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/zip.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Essential PC",
+  "version": 1,
+  "apps": [
+    "google-chrome",
+    "7zip",
+    "vlc",
+    "microsoft-powertoys",
+    "notepad-plus-plus",
+    "libreoffice",
+    "vcredist"
+  ],
+  "tweaks": [
+    "show-file-extensions",
+    "show-hidden-files",
+    "dark-mode",
+    "explorer-this-pc"
+  ]
+}
