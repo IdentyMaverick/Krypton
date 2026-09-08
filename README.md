@@ -1,6 +1,8 @@
 # Krypton
 
-Windows 11 all-in-one setup designer. Pick apps from the catalog, add anything that is missing, then export a double-click setup program that installs exactly that set on a new PC.
+[![Version](https://img.shields.io/github/v/release/IdentyMaverick/Krypton?label=version)](https://github.com/IdentyMaverick/Krypton/releases)
+
+Windows 11 all-in-one setup designer. Current version is **1.0.0**. Pick apps from the catalog, add anything that is missing, then export a double-click setup program that installs exactly that set on a new PC.
 
 Krypton does **not** replace Windows Setup and does **not** ship other vendors’ installers in this repo. It writes a small bundle that uses [winget](https://learn.microsoft.com/windows/package-manager/winget/) (and optional https / local installers you add) on the target machine.
 
@@ -17,6 +19,12 @@ Python 3.12+ is enough to open the designer:
 
 ```bash
 python3 -m krypton serve
+```
+
+Check the installed/program version:
+
+```bash
+python3 -m krypton --version
 ```
 
 Or:

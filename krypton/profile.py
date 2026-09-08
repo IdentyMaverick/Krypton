@@ -15,6 +15,7 @@ from .catalog import (
     load_catalog,
     tweak_index,
 )
+from .version import get_version
 
 PROFILE_VERSION = 1
 WINGET_RE = re.compile(WINGET_PACKAGE_RE)
@@ -173,6 +174,7 @@ def resolve_profile(profile: dict[str, Any], catalog: dict[str, Any] | None = No
     return {
         "name": name,
         "version": PROFILE_VERSION,
+        "kryptonVersion": get_version(),
         "createdAt": profile.get("createdAt") or utc_now(),
         "apps": resolved_apps,
         "tweaks": resolved_tweaks,

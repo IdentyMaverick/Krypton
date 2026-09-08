@@ -9,6 +9,7 @@ from .catalog import CATALOG_DIR, load_catalog
 from .export import slugify, write_bundle_dir, write_bundle_zip
 from .profile import load_profile, resolve_profile
 from .server import serve
+from .version import __version__
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -16,6 +17,7 @@ def build_parser() -> argparse.ArgumentParser:
         prog="krypton",
         description="Design a Windows 11 all-in-one setup bundle from selected apps.",
     )
+    parser.add_argument("-V", "--version", action="version", version=f"Krypton {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("validate", help="Validate the app catalog, presets, and tweaks")
@@ -40,7 +42,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "validate":
         catalog = load_catalog()
         print(
-            f"Catalog OK: {len(catalog['apps'])} apps, "
+            f"Krypton {__version__} catalog OK: {len(catalog['apps'])} apps, "
             f"{len(catalog['presets'])} presets, {len(catalog['tweaks'])} tweaks "
             f"from {CATALOG_DIR}"
         )

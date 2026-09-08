@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read VERSION
+        id: version
+        run: |
+          number=$(tr -d ' \n' < VERSION)
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+          echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+      - name: Check tag matches VERSION
+        run: |
+          expected="v${{ steps.version.outputs.number }}"
+          if [ "${{ steps.version.outputs.tag }}" != "$expected" ]; then
+            echo "Tag ${{ steps.version.outputs.tag }} does not match VERSION $expected"
+            exit 1
+          fi
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            --title "Krypton ${{ steps.version.outputs.number }}" \
+            --notes "Krypton ${{ steps.version.outputs.number }} — Windows 11 all-in-one setup designer.
+
+Pick apps in the designer, export a setup zip, then run Install.cmd as administrator on Windows 11."

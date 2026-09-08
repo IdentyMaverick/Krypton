@@ -82,6 +82,15 @@
     );
   }
 
+  function applyVersion() {
+    const version = state.status && state.status.version;
+    const badge = document.getElementById("app-version");
+    if (badge && version) {
+      badge.textContent = `v${version}`;
+      document.title = `Krypton v${version} — Windows 11 setup designer`;
+    }
+  }
+
   function toast(message) {
     els.toast.hidden = false;
     els.toast.textContent = message;
@@ -557,6 +566,7 @@
     if (!catalogResponse.ok) throw new Error("Could not load the app catalog.");
     state.catalog = await catalogResponse.json();
     state.status = statusResponse.ok ? await statusResponse.json() : { windows: false };
+    applyVersion();
     const known = new Set(state.catalog.apps.map((app) => app.id));
     state.selectedApps = new Set([...state.selectedApps].filter((id) => known.has(id)));
     els.statusLine.textContent = state.status.windows

@@ -17,3 +17,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: CLI validate
         run: python -m krypton validate
+      - name: CLI version
+        run: python -m krypton --version

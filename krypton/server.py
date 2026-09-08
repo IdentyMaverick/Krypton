@@ -12,6 +12,7 @@ import webbrowser
 from .catalog import ROOT, load_catalog
 from .export import slugify, write_bundle_zip
 from .profile import ProfileError, resolve_profile
+from .version import __version__
 
 DESIGNER_DIR = ROOT / "designer"
 CATALOG_PUBLIC = ROOT / "catalog"
@@ -24,7 +25,7 @@ def json_bytes(payload: Any, status: int = 200) -> tuple[int, bytes, str]:
 
 
 class KryptonHandler(BaseHTTPRequestHandler):
-    server_version = "Krypton/1"
+    server_version = f"Krypton/{__version__}"
 
     def log_message(self, format: str, *args: Any) -> None:
         sys.stderr.write("%s - %s\n" % (self.address_string(), format % args))
@@ -58,6 +59,7 @@ class KryptonHandler(BaseHTTPRequestHandler):
                 {
                     "ok": True,
                     "app": "Krypton",
+                    "version": __version__,
                     "platform": sys.platform,
                     "windows": sys.platform.startswith("win"),
                     "winget": False,

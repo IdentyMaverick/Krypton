@@ -222,7 +222,7 @@ $succeeded = 0
 
 try {
     Write-Host ""
-    Write-Host "  Krypton  Windows 11 setup" -ForegroundColor Green
+    Write-Host "  Krypton Windows 11 setup" -ForegroundColor Green
     Write-Host "  $ProfilePath" -ForegroundColor DarkGray
     Write-Host ""
 
@@ -244,7 +244,9 @@ try {
     }
 
     $bundle = Get-Content -LiteralPath $ProfilePath -Raw -Encoding UTF8 | ConvertFrom-Json
-    Write-Ok "Loaded bundle '$($bundle.name)'"
+    $kryptonVersion = Get-PropertyValue $bundle "kryptonVersion"
+    if (-not $kryptonVersion) { $kryptonVersion = "unknown" }
+    Write-Ok "Krypton $kryptonVersion loaded bundle '$($bundle.name)'"
 
     if (-not (Test-WingetPresent)) {
         Write-Fail "winget is not available. Install App Installer from the Microsoft Store, then re-run."

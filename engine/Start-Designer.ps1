@@ -14,6 +14,11 @@ $root = Split-Path -Parent $PSScriptRoot
 $designer = Join-Path $root "designer"
 $catalog = Join-Path $root "catalog"
 $engine = Join-Path $root "engine"
+$versionFile = Join-Path $root "VERSION"
+$kryptonVersion = "0.0.0"
+if (Test-Path -LiteralPath $versionFile) {
+    $kryptonVersion = (Get-Content -LiteralPath $versionFile -Raw -Encoding UTF8).Trim()
+}
 
 Add-Type -AssemblyName System.Net.HttpListener
 Add-Type -AssemblyName System.Web
@@ -56,7 +61,7 @@ try {
 }
 
 $url = $prefix
-Write-Host "Krypton designer is running at $url" -ForegroundColor Green
+Write-Host "Krypton $kryptonVersion designer is running at $url" -ForegroundColor Green
 Start-Process $url
 
 function Send-Bytes($Response, [byte[]]$Bytes, [string]$ContentType, [int]$Status = 200, [string]$Disposition = $null) {
@@ -98,6 +103,7 @@ try {
                 Send-Json $response @{
                     ok         = $true
                     app        = "Krypton"
+                    version    = $kryptonVersion
                     platform   = "win32"
                     windows    = $true
                     winget     = [bool](Get-Command winget -ErrorAction SilentlyContinue)

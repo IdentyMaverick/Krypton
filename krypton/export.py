@@ -7,6 +7,7 @@ import zipfile
 
 from .catalog import ENGINE_DIR, tweak_index
 from .profile import resolve_profile, slugify
+from .version import get_version
 
 INSTALL_CMD = """@echo off
 setlocal EnableExtensions
@@ -41,6 +42,7 @@ README_TEMPLATE = """Krypton setup bundle
 
 Name: {name}
 Created: {created}
+Krypton: {krypton_version}
 
 This folder is a double-click Windows 11 setup program for the apps and
 options you selected in Krypton.
@@ -103,6 +105,7 @@ def render_readme(profile: dict[str, Any], catalog: dict[str, Any]) -> str:
     return README_TEMPLATE.format(
         name=profile["name"],
         created=profile.get("createdAt", ""),
+        krypton_version=profile.get("kryptonVersion") or get_version(),
         apps=_app_lines(profile),
         tweaks=_tweak_lines(profile, catalog),
     )
@@ -115,6 +118,7 @@ def bundle_files(profile: dict[str, Any], catalog: dict[str, Any]) -> dict[str, 
         "Install.cmd": INSTALL_CMD.replace("\n", "\r\n"),
         "Install-Bundle.ps1": read_installer_script(),
         "README.txt": render_readme(resolved, catalog).replace("\n", "\r\n"),
+        "VERSION": get_version() + "\n",
     }
 
 

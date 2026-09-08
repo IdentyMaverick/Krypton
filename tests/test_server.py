@@ -38,6 +38,8 @@ class ServerTests(unittest.TestCase):
         status = json.loads(body)
         self.assertTrue(status["ok"])
         self.assertTrue(status["canExport"])
+        self.assertEqual(status["app"], "Krypton")
+        self.assertRegex(status["version"], r"^\d+\.\d+\.\d+$")
         status_code, body, _ = self.request("GET", "/api/catalog")
         catalog = json.loads(body)
         self.assertIn("apps", catalog)
@@ -49,6 +51,7 @@ class ServerTests(unittest.TestCase):
         self.assertIn("text/html", content_type)
         self.assertIn(b"Krypton", body)
         self.assertIn(b"Add custom app", body)
+        self.assertIn(b"app-version", body)
 
     def test_validate_and_export(self) -> None:
         profile = {

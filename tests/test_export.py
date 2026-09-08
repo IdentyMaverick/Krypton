@@ -9,6 +9,7 @@ import zipfile
 from krypton.catalog import load_catalog
 from krypton.export import write_bundle_dir, write_bundle_zip
 from krypton.profile import load_profile, resolve_profile
+from krypton.version import get_version
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,6 +34,9 @@ class ExportTests(unittest.TestCase):
             names = {app["name"] for app in bundle["apps"]}
             self.assertIn("Google Chrome", names)
             self.assertIn("7-Zip", names)
+            self.assertEqual(bundle["kryptonVersion"], get_version())
+            self.assertTrue((folder / "VERSION").is_file())
+            self.assertEqual((folder / "VERSION").read_text(encoding="utf-8").strip(), get_version())
             cmd = (folder / "Install.cmd").read_text(encoding="utf-8")
             self.assertIn("Install-Bundle.ps1", cmd)
             engine = (folder / "Install-Bundle.ps1").read_text(encoding="utf-8")
@@ -49,6 +53,7 @@ class ExportTests(unittest.TestCase):
             self.assertTrue(any(name.endswith("Install.cmd") for name in names))
             self.assertTrue(any(name.endswith("Install-Bundle.ps1") for name in names))
             self.assertTrue(any(name.endswith("README.txt") for name in names))
+            self.assertTrue(any(name.endswith("VERSION") for name in names))
 
 
 if __name__ == "__main__":
