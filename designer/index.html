@@ -9,23 +9,21 @@
 </head>
 <body>
   <div class="app-shell">
-    <header class="topbar">
-      <div class="brand">
-        <img class="brand-mark" src="/assets/logo.svg" alt="" />
-        <div>
-          <p class="brand-name">Krypton <span id="app-version" class="brand-version"></span></p>
-          <p class="brand-tag">Windows 11 all-in-one setup</p>
-        </div>
+    <header class="brand">
+      <img class="brand-mark" src="/assets/logo.svg" alt="" />
+      <div>
+        <p class="brand-name">Krypton <span id="app-version" class="brand-version">v1.0.0</span></p>
+        <p class="brand-tag">Windows 11 Advanced Tool</p>
       </div>
-      <label class="search">
-        <span class="vh">Search apps</span>
-        <input id="search" type="search" placeholder="Search apps, publishers, or winget ids" autocomplete="off" />
-      </label>
-      <label class="bundle-name">
-        <span>Setup name</span>
-        <input id="bundle-name" type="text" maxlength="80" />
-      </label>
     </header>
+    <label class="search">
+      <span class="field-label">Search</span>
+      <input id="search" type="search" placeholder="Search apps, publishers, or winget ids" autocomplete="off" />
+    </label>
+    <label class="bundle-name">
+      <span class="field-label">Setup name</span>
+      <input id="bundle-name" type="text" maxlength="80" placeholder="Setup Name" />
+    </label>
 
     <aside class="nav">
       <nav>
