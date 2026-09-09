@@ -60,15 +60,17 @@ try {
         return Get-Content -LiteralPath $Path -Raw -Encoding UTF8 | ConvertFrom-Json
     }
 
-    $appsDoc = Read-JsonFile (Join-Path $catalog "apps.json")
-    $tweaksDoc = Read-JsonFile (Join-Path $catalog "tweaks.json")
-    $presetsDoc = Read-JsonFile (Join-Path $catalog "presets.json")
-    $combinedCatalog = @{
-        version    = $appsDoc.version
-        categories = $appsDoc.categories
-        apps       = $appsDoc.apps
-        tweaks     = $tweaksDoc.tweaks
-        presets    = $presetsDoc.presets
+    function Get-CombinedCatalog {
+        $appsDoc = Read-JsonFile (Join-Path $catalog "apps.json")
+        $tweaksDoc = Read-JsonFile (Join-Path $catalog "tweaks.json")
+        $presetsDoc = Read-JsonFile (Join-Path $catalog "presets.json")
+        return @{
+            version    = $appsDoc.version
+            categories = $appsDoc.categories
+            apps       = $appsDoc.apps
+            tweaks     = $tweaksDoc.tweaks
+            presets    = $presetsDoc.presets
+        }
     }
 
     $prefix = "http://${HostAddress}:$Port/"
@@ -135,7 +137,7 @@ try {
                     continue
                 }
                 if ($request.HttpMethod -eq "GET" -and $path -eq "/api/catalog") {
-                    Send-Json $response $combinedCatalog
+                    Send-Json $response (Get-CombinedCatalog)
                     continue
                 }
                 if ($request.HttpMethod -eq "GET") {

@@ -2,6 +2,7 @@
   "use strict";
 
   const STORAGE_KEY = "krypton-profile-v1";
+  const THEME_KEY = "krypton-theme-v1";
   const INSTALL_CMD = [
     "@echo off",
     "setlocal EnableExtensions",
@@ -55,6 +56,7 @@
     customDialog: document.getElementById("custom-dialog"),
     customForm: document.getElementById("custom-form"),
     toast: document.getElementById("toast"),
+    clearButton: document.getElementById("btn-clear-cart")
   };
 
   function initials(name) {
@@ -71,6 +73,29 @@
     for (let i = 0; i < id.length; i += 1) hash = (hash * 33 + id.charCodeAt(i)) >>> 0;
     const hue = hash % 360;
     return `hsl(${hue} 70% 62%)`;
+  }
+
+  function safeIconPath(icon) {
+    if (typeof icon !== "string") return "";
+    if (!/^\/assets\/apps\/[A-Za-z0-9._-]+\.(svg|png|webp|jpe?g)$/i.test(icon)) return "";
+    return icon;
+  }
+
+  function localIcon(app) {
+    if (!app) return "";
+    if (currentTheme() === "day") {
+      const dayIcon = safeIconPath(app.iconDay);
+      if (dayIcon) return dayIcon;
+    }
+    return safeIconPath(app.icon);
+  }
+
+  function avatarMarkup(app) {
+    const icon = localIcon(app);
+    if (icon) {
+      return `<span class="avatar has-icon"><img src="${icon}" alt="" width="42" height="42" /></span>`;
+    }
+    return `<span class="avatar" style="background:${colorFor(app.id)}">${initials(app.name)}</span>`;
   }
 
   function slugify(value) {
@@ -98,6 +123,25 @@
     toast.timer = setTimeout(() => {
       els.toast.hidden = true;
     }, 2800);
+  }
+
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "day" ? "day" : "night";
+  }
+
+  function applyTheme(theme) {
+    const next = theme === "day" ? "day" : "night";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch {
+      /* ignore quota / private mode */
+    }
+    document.querySelectorAll(".theme-btn").forEach((button) => {
+      const active = button.dataset.appearance === next;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
   }
 
   function appIndex() {
@@ -223,7 +267,9 @@
     if (!apps.length && !tweaks.length) {
       els.cartList.innerHTML = '<li class="empty">Nothing selected yet.</li>';
     }
-    document.getElementById("btn-export").disabled = !apps.length && !tweaks.length;
+    const empty = !apps.length && !tweaks.length;
+    document.getElementById("btn-export").disabled = empty;
+    if (els.clearButton) els.clearButton.disabled = empty;
   }
 
   function filteredApps() {
@@ -247,7 +293,7 @@
       .map((app) => {
         const selected = state.selectedApps.has(app.id);
         return `<button type="button" class="card${selected ? " is-selected" : ""}" data-app="${app.id}">
-          <span class="avatar" style="background:${colorFor(app.id)}">${initials(app.name)}</span>
+          ${avatarMarkup(app)}
           <span>
             <h3>${app.name}</h3>
             <div class="meta">${app.publisher} · ${app.package}</div>
@@ -369,6 +415,19 @@
     persist();
     render();
     toast(`Loaded ${preset.name} preset`);
+  }
+
+  function clearCart() {
+    if (!state.selectedApps.size && !Object.keys(state.customApps).length && !state.selectedTweaks.size) {
+      return;
+    }
+    if (!window.confirm("Clear every selected app and Windows option?")) return;
+    state.selectedApps = new Set();
+    state.customApps = {};
+    state.selectedTweaks = new Set();
+    persist();
+    render();
+    toast("Setup list cleared");
   }
 
   function customSourceFields() {
@@ -573,12 +632,19 @@
       ? "Designer ready. Export a setup program, then run it with administrator rights."
       : "Designer ready. Export works here; the setup program itself runs on Windows 11.";
     renderPresets();
+    applyTheme(currentTheme());
     render();
   }
 
   document.querySelectorAll(".nav-btn").forEach((button) => {
     button.addEventListener("click", () => {
       state.view = button.dataset.view;
+      render();
+    });
+  });
+  document.querySelectorAll(".theme-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      applyTheme(button.dataset.appearance);
       render();
     });
   });
@@ -597,6 +663,7 @@
   document.getElementById("custom-source").addEventListener("change", customSourceFields);
   document.getElementById("custom-save").addEventListener("click", addCustomApp);
   document.getElementById("btn-export").addEventListener("click", exportSetup);
+  els.clearButton.addEventListener("click", clearCart);
   document.getElementById("btn-save-profile").addEventListener("click", saveProfileJson);
   document.getElementById("btn-import-profile").addEventListener("click", () => {
     document.getElementById("import-file").click();

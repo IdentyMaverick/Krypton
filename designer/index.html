@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Krypton — Windows 11 setup designer</title>
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("krypton-theme-v1");
+        if (theme !== "day" && theme !== "night") theme = "night";
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "night");
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="app-shell">
     <header class="brand">
       <img class="brand-mark" src="/assets/logo.svg" alt="" />
       <div>
-        <p class="brand-name">Krypton <span id="app-version" class="brand-version">v1.0.0</span></p>
+        <p class="brand-name">Krypton <span id="app-version" class="brand-version">v1.0.1</span></p>
         <p class="brand-tag">Windows 11 Advanced Tool</p>
       </div>
     </header>
@@ -32,6 +43,13 @@
         <button class="nav-btn" data-view="review">Review &amp; export</button>
       </nav>
       <div class="nav-block">
+        <p class="nav-label">Appearance</p>
+        <div class="theme-toggle" role="group" aria-label="Appearance">
+          <button type="button" class="theme-btn is-active" data-appearance="night" aria-pressed="true">Night</button>
+          <button type="button" class="theme-btn" data-appearance="day" aria-pressed="false">Day</button>
+        </div>
+      </div>
+      <div class="nav-block">
         <p class="nav-label">Presets</p>
         <div id="preset-list" class="preset-list"></div>
       </div>
@@ -44,8 +62,11 @@
 
     <aside class="cart" aria-label="Selected setup">
       <div class="cart-head">
-        <h2>Your setup</h2>
-        <p id="cart-count">0 apps · 0 options</p>
+        <div>
+          <h2>Your setup</h2>
+          <p id="cart-count">0 apps · 0 options</p>
+        </div>
+        <button id="btn-clear-cart" class="btn-clear-cart" type="button">Clear List</button>
       </div>
       <ol id="cart-list" class="cart-list"></ol>
       <div class="cart-actions">

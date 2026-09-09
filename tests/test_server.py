@@ -52,6 +52,8 @@ class ServerTests(unittest.TestCase):
         self.assertIn(b"Krypton", body)
         self.assertIn(b"Add custom app", body)
         self.assertIn(b"app-version", body)
+        self.assertIn(b"theme-toggle", body)
+        self.assertIn(b'data-theme="night"', body)
 
     def test_validate_and_export(self) -> None:
         profile = {
