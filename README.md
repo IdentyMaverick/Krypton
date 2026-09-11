@@ -1,5 +1,7 @@
 # Krypton
 
+<img width="2400" height="1792" alt="logo-transparent" src="https://github.com/user-attachments/assets/942962e0-84ca-448b-99a3-a9db835e1687" />
+
 [![Version](https://img.shields.io/github/v/release/IdentyMaverick/Krypton?label=version)](https://github.com/IdentyMaverick/Krypton/releases)
 
 Windows 11 all-in-one setup designer. Current version is **1.0.1**. Pick apps from the catalog, add anything that is missing, then export a double-click setup program that installs exactly that set on a new PC.
