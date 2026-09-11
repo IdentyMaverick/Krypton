@@ -97,6 +97,13 @@ Custom `url` sources must be `https://`. Custom `local` paths must stay inside t
 python3 -m unittest discover -s tests -v
 ```
 
+## Screenshots
+
+<img width="1842" height="905" alt="image" src="https://github.com/user-attachments/assets/d8e7d2bc-c8e2-46df-950f-651fa9b8683e" />
+
+<img width="1835" height="908" alt="image" src="https://github.com/user-attachments/assets/d0963ab4-e04f-4d1a-8caa-57e891556561" />
+
+
 ## License
 
 Apache License 2.0. Third-party apps stay under their own licenses; Krypton only records which packages you asked winget (or your installer) to install.
